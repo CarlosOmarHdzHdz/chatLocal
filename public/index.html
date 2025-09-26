@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat estilo YouTube</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app-chat" class="chat-container">
+    <div id="panel-bienvenida" class="bienvenida">
+      <h2>Bienvenido al Chat</h2>
+      <input id="usuario" type="text" placeholder="Escribe tu nombre...">
+      <button onclick="document.getElementById('panel-bienvenida').style.display='none'">Ingresar</button>
+    </div>
+
+    <div class="chat-box">
+      <div id="output" class="mensajes"></div>
+      <div id="escribiendo-mensaje" class="typing"></div>
+      <div class="input-area">
+        <input id="mensaje" type="text" placeholder="Escribe un mensaje...">
+        <button id="enviar">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cliente Socket.io desde CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>

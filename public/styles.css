@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #181818;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.chat-container {
+  width: 500px;
+  max-width: 90%;
+  background: #202020;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.7);
+}
+.bienvenida {
+  padding: 20px;
+  text-align: center;
+}
+.bienvenida input, .bienvenida button {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+}
+.bienvenida button {
+  background: #cc0000;
+  color: white;
+  cursor: pointer;
+}
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+.mensajes {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+.mensajes strong {
+  color: #ff0000;
+}
+.typing {
+  font-size: 0.9em;
+  color: #aaa;
+  padding-left: 10px;
+}
+.input-area {
+  display: flex;
+  padding: 10px;
+  background: #121212;
+}
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  margin-right: 10px;
+}
+.input-area button {
+  padding: 10px 15px;
+  border: none;
+  background: #cc0000;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.input-area button:hover {
+  background: #ff0000;
+}
