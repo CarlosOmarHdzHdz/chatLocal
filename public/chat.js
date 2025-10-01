@@ -1,7 +1,10 @@
-// CORRECCIÓN CLAVE: La dirección de conexión debe ser la IP pública de AWS.
-// Usar solo io.connect() es la mejor opción si el cliente se carga desde el servidor de AWS.
-// Sin embargo, usaremos la IP hardcodeada para asegurar el funcionamiento en el entorno de evaluación.
+// CORRECCIÓN CLAVE: Conexión a la IP pública de AWS.
+// Usamos la IP 54.158.244.37 que identificamos para tu servidor.
 var socket = io.connect('http://54.158.244.37:4000'); 
+
+// --- Configuración del Sonido ---
+// Asegúrate de que este archivo exista en tu carpeta 'public'
+var audio = new Audio('notification.mp3'); 
 
 // Capturar elementos del DOM
 var usuario = document.getElementById('usuario'),
@@ -28,6 +31,11 @@ mensaje.addEventListener('keypress', function(){
 
 // Escuchar eventos de 'chat' (mostrar mensajes)
 socket.on('chat', function(data){
+    // Reproducir sonido SÓLO si el mensaje no es el mío
+    if (data.usuario !== usuario.value) {
+        audio.play();
+    }
+
     output.innerHTML += `<p><strong>${data.usuario}:</strong> ${data.mensaje}</p>`;
     escribiendoMensaje.innerHTML = ""; // Limpiar el mensaje de 'escribiendo'
 });
